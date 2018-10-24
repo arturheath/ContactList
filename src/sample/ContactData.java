@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import javax.xml.stream.XMLEventFactory;
@@ -33,9 +34,27 @@ public class ContactData {
 
     public ContactData() {
         // *** initialize the contacts list here ***
+        contacts = FXCollections.observableArrayList();
     }
 
     // *** Add methods to add/delete/access contacts here ***
+
+    public void addContact(Contact contact){
+        contacts.add(contact);
+    }
+
+    public void deleteContact(Contact contact){
+        contacts.remove(contact);
+    }
+
+    public void editContact(Contact contact, String firstName, String lastName, String phoneNumber, String notes){
+        if (contacts.contains(contact)){
+            contact.setFirstName(firstName);
+            contact.setLastName(lastName);
+            contact.setPhoneNumber(phoneNumber);
+            contact.setNotes(notes);
+        }
+    }
 
     public void loadContacts() {
         try {
