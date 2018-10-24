@@ -10,7 +10,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
+<GridPane fx:id="mainGridPane" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1"
           xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="sample.Controller">
     <columnConstraints>
         <ColumnConstraints/>
@@ -21,7 +21,7 @@
     <children>
        <MenuBar GridPane.rowIndex="0">
            <Menu text="Menu">
-               <MenuItem text="Add"/>
+               <MenuItem text="Add" onAction="#showDialog"/>
                <MenuItem text="Exit"/>
            </Menu>
        </MenuBar>
